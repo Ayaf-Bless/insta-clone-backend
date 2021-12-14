@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
-    "graphql": "^16.1.0"
+    "graphql": "^16.1.0",
+    "prisma": "^3.6.0"
   },
   "devDependencies": {
     "ts-node": "^10.4.0",

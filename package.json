@@ -1,0 +1,12 @@
+{
+  "name": "insta-clone",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ayaf-Bless/insta-clone-backend.git",
+  "author": "ayaf-bless <blessambel1@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "",
+    "dev": ""
+  }
+}

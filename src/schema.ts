@@ -1,7 +1,7 @@
-import path from "path";
 import { loadFilesSync } from "@graphql-tools/load-files";
-import { mergeTypeDefs, mergeResolvers } from "@graphql-tools/merge";
+import { mergeResolvers, mergeTypeDefs } from "@graphql-tools/merge";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import path from "path";
 
 const loadedTypes = loadFilesSync(path.join(__dirname, "./**/*.typeDefs.js"), {
   recursive: true,

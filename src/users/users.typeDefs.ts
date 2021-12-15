@@ -9,6 +9,7 @@ export default gql`
     email: String!
     createdAt: String
     updatedAt: String
+    password: String!
   }
   type Mutation {
     createAccount(input: UserCreateAccont): User

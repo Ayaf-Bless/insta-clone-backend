@@ -1,10 +1,7 @@
 {
   "name": "insta-clone",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Ayaf-Bless/insta-clone-backend.git",
-  "author": "ayaf-bless <blessambel1@gmail.com>",
-  "license": "MIT",
+  "description": "- typescript\r - prisma\r - Apollo-server",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
@@ -13,13 +10,26 @@
     "start2": "ts-node src/server.ts",
     "dev2": "nodemon --exec ts-node src/server.ts"
   },
-  "dependencies": {
-    "apollo-server": "^3.5.0",
-    "graphql": "^16.1.0",
-    "prisma": "^3.6.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayaf-Bless/insta-clone-backend.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayaf-Bless/insta-clone-backend/issues"
+  },
+  "homepage": "https://github.com/Ayaf-Bless/insta-clone-backend#readme",
   "devDependencies": {
+    "@types/node": "^16.11.13",
+    "prisma": "^3.6.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.6.0",
+    "apollo-server": "^3.5.0",
+    "graphql": "^15.8.0"
   }
 }

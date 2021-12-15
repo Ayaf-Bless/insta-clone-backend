@@ -1,10 +1,10 @@
 import { ApolloServer, gql } from "apollo-server";
-
+ 
 const movies = [
   { id: 1, title: "titanic", year: 1998 },
   { id: 2, title: "moscow again", year: 2000 },
 ];
-
+ 
 const typeDefs = gql`
   type Movie {
     title: String

@@ -11,7 +11,7 @@ export default gql`
     updatedAt: String
   }
   type Mutation {
-    createAccont(input: UserCreateAccont): User
+    createAccount(input: UserCreateAccont): User
   }
   input UserCreateAccont {
     firstName: String!

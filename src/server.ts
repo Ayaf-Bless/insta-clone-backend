@@ -1,6 +1,12 @@
+require("dotenv").config();
 import { ApolloServer } from "apollo-server";
 import schema from "./schema";
 
+// @ts-ignore
 const server = new ApolloServer({ schema });
 
-server.listen().then(() => console.log("Server has started on 4000"));
+const PORT = process.env.PORT;
+
+server
+  .listen(PORT)
+  .then(() => console.log("Server has started on " + PORT + " ⚡"));

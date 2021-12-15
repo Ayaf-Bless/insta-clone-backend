@@ -8,7 +8,9 @@
     "dev": "nodemon dist/server.js",
     "start": "node dist/server.js",
     "start2": "ts-node src/server.ts",
-    "dev2": "nodemon --exec ts-node src/server.ts"
+    "dev2": "nodemon --exec ts-node src/server.ts",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
   },
   "repository": {
     "type": "git",
@@ -25,11 +27,15 @@
     "@types/node": "^16.11.13",
     "prisma": "^3.6.0",
     "ts-node": "^10.4.0",
-    "typescript": "^2.9.2"
+    "typescript": "^3.7.3"
   },
   "dependencies": {
+    "@graphql-tools/load-files": "^6.5.2",
+    "@graphql-tools/merge": "^8.2.1",
+    "@graphql-tools/schema": "^8.3.1",
     "@prisma/client": "^3.6.0",
     "apollo-server": "^3.5.0",
-    "graphql": "^15.8.0"
+    "graphql": "^15.8.0",
+    "graphql-tools": "^8.2.0"
   }
 }

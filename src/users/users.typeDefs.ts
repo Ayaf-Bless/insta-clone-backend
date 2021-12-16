@@ -17,10 +17,10 @@ export default gql`
     token: String
   }
   type Mutation {
-    createAccount(input: UserCreateAccont): User
+    createAccount(input: UserAccount): User
     login(userName: String!, password: String!): LoginResponse!
   }
-  input UserCreateAccont {
+  input UserAccount {
     firstName: String!
     lastName: String
     userName: String!

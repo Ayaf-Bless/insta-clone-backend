@@ -1,3 +1,4 @@
+import argon2 from "argon2";
 import client from "../../client";
 import { OutPut } from "../Interfaces";
 
@@ -11,6 +12,9 @@ export default {
         email: string;
         password: string;
       } = input;
+      if (data.password) {
+        data.password = await argon2.hash(data.password);
+      }
       await client.user.update({ where: { id: 1 }, data: { ...data } });
       try {
         return {
@@ -19,6 +23,7 @@ export default {
       } catch (error) {
         return {
           ok: false,
+          error: "something went wrong",
         };
       }
     },

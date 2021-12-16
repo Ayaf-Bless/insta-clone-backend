@@ -1,5 +1,5 @@
 import { User } from "@prisma/client";
-import client from "../client";
+import client from "../../client";
 
 export default {
   Query: {

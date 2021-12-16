@@ -7,7 +7,7 @@ const loadedTypes = loadFilesSync(path.join(__dirname, "./**/*.typeDefs.js"), {
   recursive: true,
 });
 const loadedResolvers = loadFilesSync(
-  path.join(__dirname, "./**/*.{queries,mutations}.js"),
+  path.join(__dirname, "./**/*.resolvers.js"),
   {
     recursive: true,
   }

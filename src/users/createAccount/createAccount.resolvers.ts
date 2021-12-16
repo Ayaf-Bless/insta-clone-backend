@@ -1,10 +1,11 @@
 import { User } from "@prisma/client";
 import argon2 from "argon2";
 import client from "../../client";
+import { OutPut } from "../Interfaces";
 
 export default {
   Mutation: {
-    createAccount: async (_: any, { input }: any): Promise<User> => {
+    createAccount: async (_: any, { input }: any): Promise<OutPut> => {
       try {
         const { userName, email, password, lastName, firstName }: User = input;
         const user = await client.user.findFirst({
@@ -15,11 +16,18 @@ export default {
         }
         const hash = await argon2.hash(password);
 
-        return client.user.create({
+        const userCreated = await client.user.create({
           data: { email, password: hash, userName, lastName, firstName },
         });
+        return {
+          ok: true,
+          user: userCreated,
+        };
       } catch (e) {
-        return e;
+        return {
+          ok: false,
+          error: e.message,
+        };
       }
     },
   },

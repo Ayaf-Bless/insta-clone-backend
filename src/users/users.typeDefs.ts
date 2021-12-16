@@ -16,6 +16,7 @@ export default gql`
     error: String
     token: String
   }
+
   type Mutation {
     createAccount(input: UserAccount): User
     login(userName: String!, password: String!): LoginResponse!
@@ -27,6 +28,7 @@ export default gql`
     email: String!
     password: String!
   }
+
   type Query {
     seeProfile(username: String!): User
   }

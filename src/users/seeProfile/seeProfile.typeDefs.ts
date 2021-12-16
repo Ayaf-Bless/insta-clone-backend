@@ -11,7 +11,12 @@ export default gql`
     updatedAt: String
     password: String!
   }
+  type SeeUserOutput {
+    ok: Boolean!
+    error: String
+    user: User
+  }
   type Query {
-    seeProfile(username: String!): User
+    seeProfile(userName: String!): SeeUserOutput
   }
 `;

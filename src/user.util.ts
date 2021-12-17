@@ -1,6 +1,7 @@
 import { User } from "@prisma/client";
 import jwt from "jsonwebtoken";
 import client from "./client";
+import { OutPut } from "./users/Interfaces";
 
 export const getUser = async (
   token: string | undefined
@@ -22,3 +23,15 @@ export const getUser = async (
     return null;
   }
 };
+
+export const protectedResolver =
+  (resolver) =>
+  (parent, args, context, info): OutPut => {
+    if (!context.loggedInUser) {
+      return {
+        ok: false,
+        error: "please log in to perform the action",
+      };
+    }
+    return resolver(parent, args, context, info);
+  };

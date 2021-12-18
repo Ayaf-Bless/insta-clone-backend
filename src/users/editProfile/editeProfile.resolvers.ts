@@ -1,5 +1,6 @@
 import argon2 from "argon2";
-import client from "../../client";
+import { GraphQLUpload } from "graphql-upload";
+//import client from "../../client";
 import { protectedResolver } from "../../user.util";
 import { OutPut } from "../Interfaces";
 
@@ -8,23 +9,27 @@ export default {
     editProfile: protectedResolver(
       async (_: any, { input }: any, context: any): Promise<OutPut> => {
         try {
-          const { loggedInUser, protectedResolver } = context;
-          protectedResolver(context);
+          const { loggedInUser } = context;
           const data: {
             firstName: string;
             lastName: string;
             userName: string;
             email: string;
             password: string;
+            bio: string;
+            avatar: string;
           } = input;
 
           if (data.password) {
             data.password = await argon2.hash(data.password);
           }
-          await client.user.update({
-            where: { id: loggedInUser.id },
-            data: { ...data },
-          });
+
+          console.log(data.avatar);
+
+          // await client.user.update({
+          //   where: { id: loggedInUser.id },
+          //   data: { ...data },
+          // });
           return {
             ok: true,
           };
@@ -37,4 +42,5 @@ export default {
       }
     ),
   },
+  Upload: GraphQLUpload,
 };

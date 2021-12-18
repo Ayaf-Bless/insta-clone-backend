@@ -1,23 +1,39 @@
 require("dotenv").config();
-import { ApolloServer } from "apollo-server";
-import schema from "./schema";
+import { ApolloServer } from "apollo-server-express";
+import express from "express";
+import { graphqlUploadExpress } from "graphql-upload";
+import { resolvers, typeDefs } from "./schema";
 import { getUser, protectedResolver } from "./user.util";
 
-const server = new ApolloServer({
-  schema,
-  cors: { credentials: true, origin: "https://studio.apollographql.com" },
-  context: async ({ req, res }) => {
-    return {
-      loggedInUser: await getUser(req.headers.authorization),
-      protectedResolver,
-    };
-  },
-});
+async function startServer() {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: async ({ req, res }) => {
+      return {
+        loggedInUser: await getUser(req.headers.authorization),
+        protectedResolver,
+      };
+    },
+  });
+  await server.start();
 
-const PORT = process.env.PORT;
-// server.applyMiddleware({
-//   cors: { credentials: true, origin: "https://studio.apollographql.com" }
-// });
-server
-  .listen(PORT)
-  .then(() => console.log("Server has started on " + PORT + " ⚡"));
+  const app = express();
+
+  // This middleware should be added before calling `applyMiddleware`.
+  app.use(graphqlUploadExpress());
+
+  server.applyMiddleware({
+    app,
+    cors: { credentials: true, origin: "https://studio.apollographql.com" },
+  });
+
+  await new Promise<void>(r => app.listen({ port: 4000 }, r));
+
+  console.log(`🚀 Server ready at http://localhost:4000/graphql`)
+}
+
+startServer().catch((e) => {
+  console.log(e);
+});
+;

@@ -10,6 +10,8 @@ export default gql`
     createdAt: String
     updatedAt: String
     password: String!
+    bio: String
+    avatar: String
   }
   type CreateAccountOutput {
     ok: Boolean

@@ -26,5 +26,5 @@
         "skipDefaultLibCheck": true
     },
     "exclude": ["node_modules"],
-    "include": ["./src/**/*.tsx", "./src/**/*.ts","./src"]
+    "include": ["./src/**/*.tsx", "./src/**/*.ts","./src/**/*.*"]
 }

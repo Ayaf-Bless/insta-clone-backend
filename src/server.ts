@@ -2,6 +2,8 @@ require("dotenv").config();
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import { graphqlUploadExpress } from "graphql-upload";
+import logger from "morgan";
+import path from "path";
 import { resolvers, typeDefs } from "./schema";
 import { getUser, protectedResolver } from "./user.util";
 
@@ -19,7 +21,8 @@ async function startServer() {
   await server.start();
 
   const app = express();
-
+  app.use(logger("tiny"));
+  app.use("/static", express.static(path.join(__dirname, "upload")));
   // This middleware should be added before calling `applyMiddleware`.
   app.use(graphqlUploadExpress());
 
@@ -28,9 +31,9 @@ async function startServer() {
     cors: { credentials: true, origin: "https://studio.apollographql.com" },
   });
 
-  await new Promise<void>(r => app.listen({ port: 4000 }, r));
-
-  console.log(`🚀 Server ready at http://localhost:4000/graphql`)
+  app.listen(4000, () => {
+    console.log("server has started on 4000");
+  });
 }
 
 startServer().catch((e) => {

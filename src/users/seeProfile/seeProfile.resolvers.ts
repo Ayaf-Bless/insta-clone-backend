@@ -10,7 +10,6 @@ export default {
       try {
         const user = await client.user.findFirst({
           where: { userName },
-          include: { followers: true, following: true },
         });
         if (!user) {
           throw new Error("user not found");

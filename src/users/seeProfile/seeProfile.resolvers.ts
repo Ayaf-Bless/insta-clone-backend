@@ -8,7 +8,10 @@ export default {
       { userName }: { userName: string }
     ): Promise<OutPut> => {
       try {
-        const user = await client.user.findFirst({ where: { userName } });
+        const user = await client.user.findFirst({
+          where: { userName },
+          include: { followers: true, following: true },
+        });
         if (!user) {
           throw new Error("user not found");
         }

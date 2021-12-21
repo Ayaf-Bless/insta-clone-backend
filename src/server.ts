@@ -5,7 +5,7 @@ import { graphqlUploadExpress } from "graphql-upload";
 import logger from "morgan";
 import path from "path";
 import { resolvers, typeDefs } from "./schema";
-import { getUser, protectedResolver } from "./user.util";
+import { getUser } from "./user.util";
 
 async function startServer() {
   const server = new ApolloServer({
@@ -14,7 +14,6 @@ async function startServer() {
     context: async ({ req, res }) => {
       return {
         loggedInUser: await getUser(req.headers.authorization),
-        protectedResolver,
       };
     },
   });

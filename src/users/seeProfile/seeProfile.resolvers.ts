@@ -3,13 +3,10 @@ import { OutPut } from "../Interfaces";
 
 export default {
   Query: {
-    seeProfile: async (
-      _: any,
-      { userName }: { userName: string }
-    ): Promise<OutPut> => {
+    seeProfile: async (_: any, { id }: { id: number }): Promise<OutPut> => {
       try {
         const user = await client.user.findFirst({
-          where: { userName },
+          where: { id },
         });
         if (!user) {
           throw new Error("user not found");

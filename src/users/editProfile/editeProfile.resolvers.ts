@@ -2,25 +2,20 @@ import argon2 from "argon2";
 import fs from "fs";
 import { GraphQLUpload } from "graphql-upload";
 import path from "path";
-import client from "../../client";
 import { protectedResolver } from "../../user.util";
 import { OutPut } from "../Interfaces";
+import { Resolvers } from "../types";
 
-export default {
+const resolvers: Resolvers = {
   Mutation: {
     editProfile: protectedResolver(
-      async (_: any, { input }: any, context: any): Promise<OutPut> => {
+      async (
+        _: any,
+        { input }: any,
+        { loggedInUser, client }
+      ): Promise<OutPut> => {
         try {
-          const { loggedInUser } = context;
-          const data: {
-            firstName: string;
-            lastName: string;
-            userName: string;
-            email: string;
-            password: string;
-            bio: string;
-            avatar;
-          } = input;
+          const data = input;
 
           if (data.password) {
             data.password = await argon2.hash(data.password);
@@ -54,3 +49,5 @@ export default {
   },
   Upload: GraphQLUpload,
 };
+
+export default resolvers;

@@ -1,20 +1,11 @@
-import client from "../../client";
 import { protectedResolver } from "../../user.util";
 import { OutPut } from "../Interfaces";
-interface LoggedUser {
-  loggedInUser: Helper;
-}
-interface Helper {
-  id: number;
-  userName: string;
-}
-
-export default {
+import { Resolvers } from "../types";
+const resolver: Resolvers = {
   Mutation: {
     followUser: protectedResolver(
-      async (_, { id }, context): Promise<OutPut> => {
+      async (_, { id }, { client, loggedInUser }): Promise<OutPut> => {
         try {
-          const { loggedInUser }: LoggedUser = context;
           const ok = await client.user.findUnique({ where: { id } });
           if (!ok) {
             return {
@@ -46,3 +37,5 @@ export default {
     ),
   },
 };
+
+export default resolver;

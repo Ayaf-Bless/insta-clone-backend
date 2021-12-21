@@ -1,11 +1,15 @@
 import { User } from "@prisma/client";
 import argon2 from "argon2";
-import client from "../../client";
 import { OutPut } from "../Interfaces";
+import { Resolvers } from "../types";
 
-export default {
+const resolvers: Resolvers = {
   Mutation: {
-    createAccount: async (_: any, { input }: any): Promise<OutPut> => {
+    createAccount: async (
+      _: any,
+      { input }: any,
+      { client }
+    ): Promise<OutPut> => {
       try {
         const { userName, email, password, lastName, firstName }: User = input;
         const user = await client.user.findFirst({
@@ -32,3 +36,5 @@ export default {
     },
   },
 };
+
+export default resolvers;

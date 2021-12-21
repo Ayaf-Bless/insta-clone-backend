@@ -1,9 +1,9 @@
-import client from "../../client";
 import { OutPut } from "../Interfaces";
+import { Resolvers } from "../types";
 
-export default {
+const resolver: Resolvers = {
   Query: {
-    seeProfile: async (_: any, { id }: { id: number }): Promise<OutPut> => {
+    seeProfile: async (_: any, { id }, { client }): Promise<OutPut> => {
       try {
         const user = await client.user.findFirst({
           where: { id },
@@ -24,3 +24,5 @@ export default {
     },
   },
 };
+
+export default resolver;

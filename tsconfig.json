@@ -24,6 +24,7 @@
         "baseUrl": ".",
         "strict": false,
         "skipDefaultLibCheck": true,
+        "allowJs": true
         
     },
     "exclude": ["node_modules"],

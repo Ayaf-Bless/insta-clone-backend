@@ -4,6 +4,7 @@ import express from "express";
 import { graphqlUploadExpress } from "graphql-upload";
 import logger from "morgan";
 import path from "path";
+import client from "./client";
 import { resolvers, typeDefs } from "./schema";
 import { getUser } from "./user.util";
 
@@ -14,6 +15,7 @@ async function startServer() {
     context: async ({ req, res }) => {
       return {
         loggedInUser: await getUser(req.headers.authorization),
+        client,
       };
     },
   });

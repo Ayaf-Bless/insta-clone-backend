@@ -1,8 +1,8 @@
-import client from "../../client";
+import { Resolvers } from "../types";
 
-export default {
+const resolver: Resolvers = {
   Query: {
-    seeFollowings: async (_, { id, cursor }) => {
+    seeFollowings: async (_, { id, cursor }, { client }) => {
       try {
         const user = await client.user.findUnique({
           where: { id },
@@ -22,7 +22,7 @@ export default {
             take: 5,
             ...(cursor && { cursor: { id: cursor } }),
           });
-          
+
         const totalPages = await client.user.count({ where: { id } });
         return {
           ok: true,
@@ -38,3 +38,5 @@ export default {
     },
   },
 };
+
+export default resolver;

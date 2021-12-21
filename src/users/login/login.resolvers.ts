@@ -1,13 +1,13 @@
 import argon2 from "argon2";
 import jwt from "jsonwebtoken";
-import client from "../../client";
 import { OutPut } from "../Interfaces";
 
 export default {
   Mutation: {
     login: async (
       _: any,
-      { userName, password }: { userName: string; password: string }
+      { userName, password },
+      { client }
     ): Promise<OutPut> => {
       try {
         const user = await client.user.findFirst({

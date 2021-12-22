@@ -1,31 +1,37 @@
+import { Photo } from "@prisma/client";
 import { protectedResolver } from "../../user.util";
 import { Resolvers } from "../../users/types";
 
 const resolver: Resolvers = {
   Mutation: {
     uploadPhoto: protectedResolver(
-      async (_, { file, caption }, { client, loggedInUser }) => {
+      async (
+        _,
+        { file, caption },
+        { client, loggedInUser }
+      ): Promise<Photo> => {
+        let hashtagObjs: any[] = [];
         if (caption) {
-          const hashtag = caption.match(/#[\w]+/g);
-          console.log(hashtag);
-          return { caption };
+          const hashtags: string[] = caption.match(/#[\w]+/g);
+          hashtagObjs = hashtags.map((hashtag) => ({
+            where: { hashtag },
+            create: { hashtag },
+          }));
         }
-        client.photo.create({
+        return client.photo.create({
           data: {
             file,
             caption,
-            hashtags: {
-              connectOrCreate: [
-                {
-                  where: { hashtag: "#food" },
-                  create: { hashtag: "#food" },
-                },
-              ],
+            ...(hashtagObjs.length > 0 && {
+              hashtags: { connectOrCreate: hashtagObjs },
+            }),
+            user: {
+              connect: {
+                id: loggedInUser.id,
+              },
             },
-            userId: loggedInUser.id,
           },
         });
-        return false;
       }
     ),
   },

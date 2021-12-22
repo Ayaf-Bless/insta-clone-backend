@@ -1,6 +1,6 @@
 import { Photo } from "@prisma/client";
+import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
-import { Resolvers } from "../../users/types";
 
 const resolver: Resolvers = {
   Mutation: {

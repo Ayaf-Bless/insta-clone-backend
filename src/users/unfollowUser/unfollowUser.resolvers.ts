@@ -1,6 +1,6 @@
+import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
 import { OutPut } from "../Interfaces";
-import { Resolvers } from "../types";
 
 const resolver: Resolvers = {
   Mutation: {

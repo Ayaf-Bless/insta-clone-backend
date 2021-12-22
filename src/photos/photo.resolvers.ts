@@ -1,4 +1,4 @@
-import { Resolvers } from "../users/types";
+import { Resolvers } from "../types";
 
 const resolver: Resolvers = {
   Photo: {
@@ -15,6 +15,19 @@ const resolver: Resolvers = {
           },
         },
       });
+    },
+  },
+  Hashtag: {
+    totalPhoto: ({ id }, _, { client }) =>
+      client.photo.count({
+        where: {
+          hashtags: {
+            some: { id },
+          },
+        },
+      }),
+    photos: ({ id }, { page }, { client }) => {
+      return client.hashtag.findUnique({ where: { id } }).photos();
     },
   },
 };

@@ -2,9 +2,9 @@ import argon2 from "argon2";
 import fs from "fs";
 import { GraphQLUpload } from "graphql-upload";
 import path from "path";
+import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
 import { OutPut } from "../Interfaces";
-import { Resolvers } from "../types";
 
 const resolvers: Resolvers = {
   Mutation: {

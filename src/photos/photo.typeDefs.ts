@@ -12,8 +12,9 @@ export default gql`
   }
   type Hashtag {
     id: Int!
-    photos: [Photo]
+    photos(page: Int!): [Photo]
     hashtag: String!
+    totalPhoto: Int!
     createdAt: String!
     updatedAt: String!
   }

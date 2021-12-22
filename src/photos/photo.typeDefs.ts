@@ -8,7 +8,7 @@ export default gql`
     user: User!
     file: String!
     caption: String
-    hashtag: [Hashtag]
+    hashtags: [Hashtag]
   }
   type Hashtag {
     id: Int!

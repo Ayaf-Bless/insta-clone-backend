@@ -22,5 +22,8 @@ export default {
       });
       return Boolean(user);
     },
+    photos: ({ id }, { page }, { client }) => {
+      return client.hashtag.findUnique({ where: { id } }).photos();
+    },
   },
 };

@@ -2,7 +2,7 @@ import { Resolvers } from "../../types";
 
 const resolver: Resolvers = {
   Query: {
-    searchUser: async (_, { keyword, page }, { client }) => {
+    searchUser: (_, { keyword, page }, { client }) => {
       return client.user.findMany({
         where: { userName: { startsWith: keyword.toLowerCase() } },
         take: 5,

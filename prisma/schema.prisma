@@ -6,40 +6,55 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 generator client {
   provider = "prisma-client-js"
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   firstName String
-  lastName String?
-  userName String @unique
-  email String @unique
-  password String
-  bio String?
-  avatar String?
-  followers User[] @relation("followRelation", references:[id])
-  following User[] @relation("followRelation", references:[id])
-  photo Photo[]
+  lastName  String?
+  userName  String   @unique
+  email     String   @unique
+  password  String
+  bio       String?
+  avatar    String?
+  followers User[]   @relation("followRelation", references: [id])
+  following User[]   @relation("followRelation", references: [id])
+  photo     Photo[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  Likes      Like[]
 }
+
 model Photo {
-  id Int @id @default(autoincrement())
-  user User @relation(fields: [userId], references: [id])
-  userId Int
-  file String
-  caption String?
-  hashtags Hashtag[]
+  id        Int       @id @default(autoincrement())
+  user      User      @relation(fields: [userId], references: [id])
+  userId    Int
+  file      String
+  caption   String?
+  hashtags  Hashtag[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  Likes      Like[]
+}
+
+model Hashtag {
+  id        Int      @id @default(autoincrement())
+  hashtag   String   @unique
+  photos    Photo[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-model Hashtag {
-  id Int @id @default(autoincrement())
-  hashtag String @unique
-  photos Photo[]
+
+model Like {
+  id        Int      @id @default(autoincrement())
+  photo     Photo    @relation(fields: [photoId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  photoId   Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([photoId,userId])
 }

@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/upload/ok.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +89,8 @@
       <workItem from="1639959414130" duration="107000" />
       <workItem from="1640025064342" duration="661000" />
       <workItem from="1640115814136" duration="149000" />
+      <workItem from="1640272679996" duration="148000" />
+      <workItem from="1640272885847" duration="2000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 import { Photo } from "@prisma/client";
 import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
+import { processHashtag } from "../photo.util";
 
 const resolver: Resolvers = {
   Mutation: {
@@ -10,13 +11,9 @@ const resolver: Resolvers = {
         { file, caption },
         { client, loggedInUser }
       ): Promise<Photo> => {
-        let hashtagObjs: any[] = [];
+        let hashtagObjs;
         if (caption) {
-          const hashtags: string[] = caption.match(/#[\w]+/g);
-          hashtagObjs = hashtags.map((hashtag) => ({
-            where: { hashtag },
-            create: { hashtag },
-          }));
+          hashtagObjs = processHashtag(caption);
         }
         return client.photo.create({
           data: {

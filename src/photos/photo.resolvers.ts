@@ -1,3 +1,4 @@
+import { PrismaPromise } from "@prisma/client";
 import { Resolvers } from "../types";
 
 const resolver: Resolvers = {
@@ -15,6 +16,9 @@ const resolver: Resolvers = {
           },
         },
       });
+    },
+    likes: ({ id }, _, { client }): PrismaPromise<number> => {
+      return client.like.count({ where: { photoId: id } });
     },
   },
   Hashtag: {

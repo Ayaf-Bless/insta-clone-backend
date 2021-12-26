@@ -23,6 +23,9 @@ const resolver: Resolvers = {
     comments: ({ id }, _, { client }): PrismaPromise<number> => {
       return client.comment.count({ where: { photoId: id } });
     },
+    isMine: ({ userId }, _, { loggedInUser }) => {
+      return userId === loggedInUser.id;
+    },
   },
   Hashtag: {
     totalPhoto: ({ id }, _, { client }) =>

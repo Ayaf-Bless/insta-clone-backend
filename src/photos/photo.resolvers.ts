@@ -20,6 +20,9 @@ const resolver: Resolvers = {
     likes: ({ id }, _, { client }): PrismaPromise<number> => {
       return client.like.count({ where: { photoId: id } });
     },
+    comments: ({ id }, _, { client }): PrismaPromise<number> => {
+      return client.comment.count({ where: { photoId: id } });
+    },
   },
   Hashtag: {
     totalPhoto: ({ id }, _, { client }) =>

@@ -10,7 +10,8 @@
     "start2": "ts-node src/server.ts",
     "dev2": "nodemon --exec ts-node src/server.ts",
     "migrate": "npx prisma migrate dev",
-    "studio": "npx prisma studio"
+    "studio": "npx prisma studio",
+    "format": "npx prisma format"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,5 @@
 import { User } from "@prisma/client";
+import { GraphQLResolveInfo } from "graphql";
 import jwt from "jsonwebtoken";
 import client from "./client";
 import { Resolver } from "./types";
@@ -32,12 +33,17 @@ export const getUser = async (
 
 export const protectedResolver =
   (resolver: Resolver) =>
-  (parent, args, context, info): OutPut => {
+  (parent, args, context, info: GraphQLResolveInfo): OutPut | null => {
+    const query = info.operation.operation === "query";
     if (!context.loggedInUser) {
-      return {
-        ok: false,
-        error: "please log in to perform the action",
-      };
+      if (query) {
+        return null;
+      } else {
+        return {
+          ok: false,
+          error: "please log in to perform the action",
+        };
+      }
     }
     return resolver(parent, args, context, info);
   };

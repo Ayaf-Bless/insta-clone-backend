@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/seeRooms/seeRooms.resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/seeRooms/seeRooms.typeDefs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.typeDefs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/createAccount/creteAccount.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/createAccount/creteAccount.typeDefs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/editProfile/editProfile.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/editProfile/editProfile.typeDefs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/login/login.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/login/login.typeDefs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.typeDefs.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Ayaf\AppData\Roaming\npm\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
     <property name="ts.external.directory.path" value="C:\Users\Ayaf\OneDrive\Documents\Javascript\Node\insta-clone\node_modules\typescript\lib" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -131,7 +136,7 @@
       <workItem from="1640451726638" duration="4000" />
       <workItem from="1640659586458" duration="864000" />
       <workItem from="1640676323459" duration="39000" />
-      <workItem from="1640886089869" duration="5152000" />
+      <workItem from="1640886089869" duration="8071000" />
     </task>
     <servers />
   </component>

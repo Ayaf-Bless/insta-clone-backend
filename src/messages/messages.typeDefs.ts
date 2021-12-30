@@ -3,8 +3,9 @@ import { gql } from "apollo-server-express";
 export default gql`
   type Room {
     id: Int!
-    user: [User]
+    users: [User]
     messages: [Message]
+    unreadTotal: Int!
     createdAt: String!
     updatedAt: String!
   }

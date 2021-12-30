@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.typeDefs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/seeRoom/seeRoom.resolvers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/seeRoom/seeRoom.typeDefs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/createAccount/creteAccount.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/createAccount/creteAccount.typeDefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/editProfile/editProfile.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/editProfile/editProfile.typeDefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/login/login.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/login/login.typeDefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.typeDefs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +60,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration name="concerency" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="concerency" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -105,9 +113,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.studio" />
-        <item itemvalue="npm.format" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.watch" />
+        <item itemvalue="npm.concerency" />
+        <item itemvalue="npm.format" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +145,7 @@
       <workItem from="1640451726638" duration="4000" />
       <workItem from="1640659586458" duration="864000" />
       <workItem from="1640676323459" duration="39000" />
-      <workItem from="1640886089869" duration="8071000" />
+      <workItem from="1640886089869" duration="12462000" />
     </task>
     <servers />
   </component>

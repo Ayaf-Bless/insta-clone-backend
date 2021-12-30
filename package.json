@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Ayaf-Bless/insta-clone-backend#readme",
   "devDependencies": {
     "@types/node": "^16.11.13",
+    "concurrently": "^6.5.1",
     "prisma": "^3.6.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"

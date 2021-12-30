@@ -13,7 +13,7 @@ const resolver: Resolvers = {
         { file, caption },
         { client, loggedInUser }
       ): Promise<Photo> => {
-        let hashtagObjs;
+        let hashtagObjs: any = [];
         if (caption) {
           hashtagObjs = processHashtag(caption);
         }
@@ -30,7 +30,7 @@ const resolver: Resolvers = {
         return client.photo.create({
           data: {
             file,
-            caption,
+            ...(caption && { caption }),
             ...(hashtagObjs.length > 0 && {
               hashtags: { connectOrCreate: hashtagObjs },
             }),

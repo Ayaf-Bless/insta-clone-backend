@@ -1,6 +1,6 @@
 import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
-import { OutPut } from "../../users/Interfaces";
+import { OutPut } from "../../Interfaces";
 import { processHashtag } from "../photo.util";
 
 const resolver: Resolvers = {

@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/messages/roomUpdates/roomUpdates.typeDefs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/roomUpdates/roomupdates.resolvers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pubSub.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comments/createComment/createComment.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/comments/createComment/createComment.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comments/deleteComment/deleteComment.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/comments/deleteComment/deleteComment.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comments/editComment/editComment.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/comments/editComment/editComment.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messages/readMessage/readMessage.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/readMessage/readMessage.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photos/deletePhoto/deletePhoto.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/photos/deletePhoto/deletePhoto.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photos/editPhoto/editPhoto.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/photos/editPhoto/editPhoto.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/photos/likePhoto/toggleLike.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/photos/likePhoto/toggleLike.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user.util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/user.util.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/Interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/createAccount/createAccount.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/createAccount/createAccount.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/editProfile/editeProfile.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/editProfile/editeProfile.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/followUser/followUser.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/followUser/followUser.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/login/login.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/login/login.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/seeProfile/seeProfile.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/unfollowUser/unfollowUser.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/unfollowUser/unfollowUser.resolvers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +70,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Ayaf\AppData\Roaming\npm\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\Ayaf\OneDrive\Documents\Javascript\Node\insta-clone\node_modules\typescript\lib" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ayaf\OneDrive\Documents\Javascript\Node\insta-clone\src" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="imp" />
+    </option>
   </component>
   <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -145,7 +176,7 @@
       <workItem from="1640902628647" duration="280000" />
       <workItem from="1640931358623" duration="1046000" />
       <workItem from="1640972064992" duration="976000" />
-      <workItem from="1640973122712" duration="2192000" />
+      <workItem from="1640973122712" duration="6587000" />
     </task>
     <servers />
   </component>

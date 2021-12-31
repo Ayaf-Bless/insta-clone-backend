@@ -3,7 +3,7 @@ import { GraphQLResolveInfo } from "graphql";
 import jwt from "jsonwebtoken";
 import client from "./client";
 import { Resolver } from "./types";
-import { OutPut } from "./users/Interfaces";
+import { OutPut } from "./Interfaces";
 
 export const getUser = async (
   token: string | undefined

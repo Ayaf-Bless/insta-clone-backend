@@ -1,8 +1,11 @@
 import { User } from "@prisma/client";
 
-export interface OutPut {
+interface OutPut {
   ok: boolean;
   error?: string;
   token?: string;
   user?: User | undefined;
 }
+const NEW_MESSAGE = "NEW_MESSAGE";
+
+export { OutPut, NEW_MESSAGE };

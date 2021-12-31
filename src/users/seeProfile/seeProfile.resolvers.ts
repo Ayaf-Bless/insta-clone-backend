@@ -1,5 +1,5 @@
 import { Resolvers } from "../../types";
-import { OutPut } from "../Interfaces";
+import { OutPut } from "../../Interfaces";
 
 const resolver: Resolvers = {
   Query: {

@@ -1,5 +1,5 @@
 import { Resolvers } from "src/types";
-import { OutPut } from "src/users/Interfaces";
+import { OutPut } from "src/Interfaces";
 import { protectedResolver } from "../../user.util";
 
 const resolver: Resolvers = {

@@ -1,7 +1,7 @@
 import { User } from "@prisma/client";
 import argon2 from "argon2";
 import { Resolvers } from "../../types";
-import { OutPut } from "../Interfaces";
+import { OutPut } from "../../Interfaces";
 
 const resolvers: Resolvers = {
   Mutation: {

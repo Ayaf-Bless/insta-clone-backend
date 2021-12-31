@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/messages/readMessage/readMessage.resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/readMessage/readMessage.typeDefs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,7 @@
       <workItem from="1640902628647" duration="280000" />
       <workItem from="1640931358623" duration="1046000" />
       <workItem from="1640972064992" duration="976000" />
-      <workItem from="1640973122712" duration="1307000" />
+      <workItem from="1640973122712" duration="2192000" />
     </task>
     <servers />
   </component>

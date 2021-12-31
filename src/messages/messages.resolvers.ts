@@ -19,6 +19,11 @@ const resolver: Resolvers = {
       });
     },
   },
+  Message: {
+    user: async ({ id }, _, { client }) => {
+      return client.message.findUnique({ where: { id } }).user();
+    },
+  },
 };
 
 export default resolver;

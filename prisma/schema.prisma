@@ -27,7 +27,7 @@ model User {
   rooms     Room[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  messages   Message[]
+  messages  Message[]
 }
 
 model Photo {
@@ -79,7 +79,7 @@ model Room {
   users     User[]
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  messages   Message[]
+  messages  Message[]
 }
 
 model Message {
@@ -87,6 +87,7 @@ model Message {
   payload   String
   user      User     @relation(fields: [userId], references: [id])
   userId    Int
+  read      Boolean  @default(false)
   room      Room     @relation(fields: [roomId], references: [id])
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

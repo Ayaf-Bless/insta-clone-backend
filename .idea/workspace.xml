@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/seeRoom/seeRoom.resolvers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/messages/seeRoom/seeRoom.typeDefs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/readMessage/readMessage.resolvers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/messages/readMessage/readMessage.typeDefs.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.resolvers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/messages.typeDefs.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.18.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Ayaf\AppData\Roaming\npm\node_modules\prettier" />
@@ -60,16 +59,6 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="npm.dev">
-    <configuration name="concerency" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="concerency" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -85,6 +74,16 @@
       <command value="run" />
       <scripts>
         <script value="format" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="migrate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migrate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -115,7 +114,7 @@
         <item itemvalue="npm.studio" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.watch" />
-        <item itemvalue="npm.concerency" />
+        <item itemvalue="npm.migrate" />
         <item itemvalue="npm.format" />
       </list>
     </recent_temporary>
@@ -145,7 +144,12 @@
       <workItem from="1640451726638" duration="4000" />
       <workItem from="1640659586458" duration="864000" />
       <workItem from="1640676323459" duration="39000" />
-      <workItem from="1640886089869" duration="12462000" />
+      <workItem from="1640886089869" duration="12573000" />
+      <workItem from="1640902433402" duration="151000" />
+      <workItem from="1640902628647" duration="280000" />
+      <workItem from="1640931358623" duration="1046000" />
+      <workItem from="1640972064992" duration="976000" />
+      <workItem from="1640973122712" duration="1307000" />
     </task>
     <servers />
   </component>
@@ -162,6 +166,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,7 +6,18 @@ const resolver: Resolvers = {
       client.room.findUnique({ where: { id } }).users(),
     messages: ({ id }, _, { client }) =>
       client.message.findMany({ where: { roomId: id } }),
-    unreadTotal: () => 0,
+    unreadTotal: ({ id }, __, { client, loggedInUser }) => {
+      if (!loggedInUser) {
+        return 0;
+      }
+      return client.message.count({
+        where: {
+          read: false,
+          roomId: id,
+          user: { id: { not: loggedInUser.id } },
+        },
+      });
+    },
   },
 };
 

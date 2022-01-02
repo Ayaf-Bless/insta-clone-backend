@@ -1,6 +1,7 @@
+import pubSub from "../../pubSub";
 import { Resolvers } from "../../types";
 import { protectedResolver } from "../../user.util";
-import { OutPut } from "../../Interfaces";
+import { NEW_MESSAGE, OutPut } from "../../Interfaces";
 
 const resolver: Resolvers = {
   Mutation: {
@@ -40,7 +41,7 @@ const resolver: Resolvers = {
             };
           }
         }
-        await client.message.create({
+        const message = await client.message.create({
           data: {
             payload,
             room: { connect: { id: room.id } },
@@ -51,6 +52,8 @@ const resolver: Resolvers = {
             },
           },
         });
+
+        await pubSub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
         return {
           ok: true,
         };

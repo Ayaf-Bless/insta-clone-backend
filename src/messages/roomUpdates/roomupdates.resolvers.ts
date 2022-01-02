@@ -1,11 +1,16 @@
+import { withFilter } from "graphql-subscriptions";
 import { NEW_MESSAGE } from "../../Interfaces";
 import pubSub from "../../pubSub";
-import { Resolvers } from "../../types";
 
 const resolver = {
   Subscription: {
     roomUpdates: {
-      subscribe: () => pubSub.asyncIterator(NEW_MESSAGE),
+      subscribe: withFilter(
+        () => pubSub.asyncIterator(NEW_MESSAGE),
+        ({ roomUpdates }, { roomId }) => {
+          return roomUpdates.roomId === roomId;
+        }
+      ),
     },
   },
 };

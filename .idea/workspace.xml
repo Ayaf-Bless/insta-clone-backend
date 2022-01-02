@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="36b65a60-db74-4ab1-84b2-efefd41c699d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/roomUpdates/roomUpdates.typeDefs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/roomUpdates/roomUpdates.typeDefs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/sendMessage/sendMessage.resolvers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/messages/roomUpdates/roomupdates.resolvers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/messages/roomUpdates/roomupdates.resolvers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +157,7 @@
       <workItem from="1640972064992" duration="976000" />
       <workItem from="1640973122712" duration="6999000" />
       <workItem from="1640982151430" duration="13000" />
-      <workItem from="1641151307688" duration="3336000" />
+      <workItem from="1641151307688" duration="5309000" />
     </task>
     <servers />
   </component>

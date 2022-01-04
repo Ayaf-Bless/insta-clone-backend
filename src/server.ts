@@ -1,16 +1,16 @@
 require("dotenv").config();
+import { makeExecutableSchema } from "@graphql-tools/schema";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
+import { execute, subscribe } from "graphql";
 import { graphqlUploadExpress } from "graphql-upload";
 import { createServer } from "http";
 import logger from "morgan";
 import path from "path";
+import { SubscriptionServer } from "subscriptions-transport-ws";
 import client from "./client";
 import { resolvers, typeDefs } from "./schema";
 import { getUser } from "./user.util";
-import { SubscriptionServer } from "subscriptions-transport-ws";
-import { makeExecutableSchema } from "@graphql-tools/schema";
-import { execute, subscribe } from "graphql";
 
 async function startServer() {
   const schema = makeExecutableSchema({ typeDefs, resolvers });
@@ -18,17 +18,30 @@ async function startServer() {
 
   const httpServer = createServer(app);
   const subscriptionServer = SubscriptionServer.create(
-    { schema, execute, subscribe },
+    {
+      schema,
+      execute,
+      subscribe,
+      async onConnect(connectionParams) {
+        if (connectionParams.Authorization) {
+          const loggedInUser = await getUser(connectionParams.Authorization);
+
+          return { loggedInUser };
+        }
+        throw new Error("Missing auth token!");
+      },
+    },
     { server: httpServer, path: "/graphql" }
   );
   const server = new ApolloServer({
     schema,
-    context: async ({ req, res }) => {
+    context: async ({ req }) => {
       return {
         loggedInUser: await getUser(req.headers.authorization),
         client,
       };
     },
+
     plugins: [
       {
         async serverWillStart() {
